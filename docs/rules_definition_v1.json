@@ -1,0 +1,409 @@
+{
+  "constants": {
+    "amount_multiplier": 10,
+    "direction_minimum_history": 10,
+    "minimum_currency_history": 5,
+    "minimum_currency_training_rows": 1000,
+    "minimum_hourly_activity": 5,
+    "surge_multiplier": 5,
+    "warmup_seconds": 86400
+  },
+  "dataset": {
+    "dataset_id": 1,
+    "dataset_key": "ibm-aml-hi-small-v8",
+    "fingerprint": "676d1c42a92e495ca159fc0cadf28acd0e33598b728fdc236b6e089dd8f28240"
+  },
+  "feature_sha256": "dffd3df6fe3b938281f6f28fccf6584736698af6f6206426754425d1bb2f8d89",
+  "finalized_at": "2026-10-14T05:29:09.231358+00:00",
+  "implementation_sha256": "cd5051f38012eb60e3d7588a14f41c256d0c799f9058b15a81407776360c0c74",
+  "profile": {
+    "activity": {
+      "receiver": {
+        "cutoff": 21,
+        "eligible_training_rows": 2020587
+      },
+      "sender": {
+        "cutoff": 22763,
+        "eligible_training_rows": 2005405
+      }
+    },
+    "currencies": [
+      {
+        "currency": "Australian Dollar",
+        "observations": 87467,
+        "p95": "328962.000000000",
+        "p995": "10419937.330000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Bitcoin",
+        "observations": 93101,
+        "p95": "20.434099000",
+        "p995": "714.307018000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Brazil Real",
+        "observations": 45059,
+        "p95": "1650975.300000000",
+        "p995": "84608652.090000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Canadian Dollar",
+        "observations": 89342,
+        "p95": "280836.380000000",
+        "p995": "13252782.830000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Euro",
+        "observations": 748601,
+        "p95": "192800.830000000",
+        "p995": "8146092.120000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Mexican Peso",
+        "observations": 70752,
+        "p95": "4552742.720000000",
+        "p995": "197688308.090000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Ruble",
+        "observations": 99224,
+        "p95": "22871140.940000000",
+        "p995": "890688307.890000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Rupee",
+        "observations": 121784,
+        "p95": "22337106.480000000",
+        "p995": "810225847.080000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Saudi Riyal",
+        "observations": 56522,
+        "p95": "945511.240000000",
+        "p995": "23670116.730000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Shekel",
+        "observations": 122892,
+        "p95": "743795.970000000",
+        "p995": "28662388.190000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Swiss Franc",
+        "observations": 150448,
+        "p95": "211056.570000000",
+        "p995": "10447434.880000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "UK Pound",
+        "observations": 115246,
+        "p95": "175462.130000000",
+        "p995": "8400429.500000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "US Dollar",
+        "observations": 1212221,
+        "p95": "236279.270000000",
+        "p995": "10278809.260000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Yen",
+        "observations": 99487,
+        "p95": "28699994.060000000",
+        "p995": "1119585230.280000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Yuan",
+        "observations": 136775,
+        "p95": "1525337.310000000",
+        "p995": "69292110.330000000",
+        "role": "sender",
+        "supported": true
+      },
+      {
+        "currency": "Australian Dollar",
+        "observations": 88515,
+        "p95": "327851.800000000",
+        "p995": "10419937.330000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Bitcoin",
+        "observations": 94358,
+        "p95": "19.889706000",
+        "p995": "705.242181000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Brazil Real",
+        "observations": 45566,
+        "p95": "1742998.280000000",
+        "p995": "89099748.940000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Canadian Dollar",
+        "observations": 90121,
+        "p95": "278118.980000000",
+        "p995": "13926230.010000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Euro",
+        "observations": 750874,
+        "p95": "189338.760000000",
+        "p995": "7976853.480000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Mexican Peso",
+        "observations": 71275,
+        "p95": "4763542.000000000",
+        "p995": "212617544.930000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Ruble",
+        "observations": 100541,
+        "p95": "27191388.740000000",
+        "p995": "1249476293.360000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Rupee",
+        "observations": 122917,
+        "p95": "26433761.000000000",
+        "p995": "944490014.800000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Saudi Riyal",
+        "observations": 57104,
+        "p95": "935134.030000000",
+        "p995": "23633833.040000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Shekel",
+        "observations": 124586,
+        "p95": "752492.280000000",
+        "p995": "29300297.680000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Swiss Franc",
+        "observations": 152265,
+        "p95": "211610.250000000",
+        "p995": "10427990.810000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "UK Pound",
+        "observations": 115563,
+        "p95": "170055.080000000",
+        "p995": "8400429.500000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "US Dollar",
+        "observations": 1202657,
+        "p95": "224676.060000000",
+        "p995": "9561481.640000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Yen",
+        "observations": 100152,
+        "p95": "35250809.370000000",
+        "p995": "1537271385.710000000",
+        "role": "receiver",
+        "supported": true
+      },
+      {
+        "currency": "Yuan",
+        "observations": 132427,
+        "p95": "1602806.440000000",
+        "p995": "77225592.000000000",
+        "role": "receiver",
+        "supported": true
+      }
+    ]
+  },
+  "ranking_tie_salt": "mulegraph-rules-v1-budget-ties",
+  "reasons": {
+    "RECEIVER_AMOUNT_SPIKE": "Received amount exceeds 10\u00d7 the prior same-currency mean and training p95",
+    "RECEIVER_DIRECTION_CHANGE": "Historically sending account now receives a training-p95 amount",
+    "RECEIVER_FREQUENCY_SURGE": "Receiver's prior-hour activity exceeds 5\u00d7 its prior-23-hour hourly rate",
+    "RECEIVER_HIGH_ACTIVITY": "Receiver's prior-day activity exceeds its training reference cutoff",
+    "SENDER_AMOUNT_SPIKE": "Paid amount exceeds 10\u00d7 the prior same-currency mean and training p95",
+    "SENDER_DIRECTION_CHANGE": "Historically receiving account now sends a training-p95 amount",
+    "SENDER_FREQUENCY_SURGE": "Sender's prior-hour activity exceeds 5\u00d7 its prior-23-hour hourly rate",
+    "SENDER_HIGH_ACTIVITY": "Sender's prior-day activity exceeds its training reference cutoff"
+  },
+  "runtime_contract": {
+    "dependencies": {
+      "duckdb": "1.5.6",
+      "psycopg": "3.3.6",
+      "pyarrow": "23.0.1"
+    },
+    "splits": [
+      [
+        "train",
+        "2022-09-01T00:00:00",
+        "2022-09-07T00:00:00"
+      ],
+      [
+        "validation",
+        "2022-09-07T00:00:00",
+        "2022-09-09T00:00:00"
+      ],
+      [
+        "test",
+        "2022-09-09T00:00:00",
+        "2022-09-11T00:00:00"
+      ],
+      [
+        "stress",
+        "2022-09-11T00:00:00",
+        "2022-09-19T00:00:00"
+      ]
+    ]
+  },
+  "selection": {
+    "candidates": [
+      {
+        "alerts": 30348,
+        "eligible": false,
+        "f2": 0.007248057520584483,
+        "threshold": 1,
+        "true_positives": 50
+      },
+      {
+        "alerts": 6912,
+        "eligible": true,
+        "f2": 0.00949710564399421,
+        "threshold": 2,
+        "true_positives": 21
+      },
+      {
+        "alerts": 392,
+        "eligible": true,
+        "f2": 0.002204585537918871,
+        "threshold": 3,
+        "true_positives": 2
+      },
+      {
+        "alerts": 35,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 4,
+        "true_positives": 0
+      },
+      {
+        "alerts": 3,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 5,
+        "true_positives": 0
+      },
+      {
+        "alerts": 0,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 6,
+        "true_positives": 0
+      },
+      {
+        "alerts": 0,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 7,
+        "true_positives": 0
+      },
+      {
+        "alerts": 0,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 8,
+        "true_positives": 0
+      },
+      {
+        "alerts": 0,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 9,
+        "true_positives": 0
+      },
+      {
+        "alerts": 0,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 10,
+        "true_positives": 0
+      },
+      {
+        "alerts": 0,
+        "eligible": true,
+        "f2": 0.0,
+        "threshold": 11,
+        "true_positives": 0
+      }
+    ],
+    "maximum_alert_rate": 0.01,
+    "objective": "validation F2",
+    "tie_policy": "higher threshold"
+  },
+  "threshold": 2,
+  "version": "rules-v1",
+  "weights": {
+    "RECEIVER_AMOUNT_SPIKE": 2,
+    "RECEIVER_DIRECTION_CHANGE": 1,
+    "RECEIVER_FREQUENCY_SURGE": 1,
+    "RECEIVER_HIGH_ACTIVITY": 1,
+    "SENDER_AMOUNT_SPIKE": 2,
+    "SENDER_DIRECTION_CHANGE": 1,
+    "SENDER_FREQUENCY_SURGE": 1,
+    "SENDER_HIGH_ACTIVITY": 1
+  }
+}

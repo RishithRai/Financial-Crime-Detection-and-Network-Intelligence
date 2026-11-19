@@ -1,0 +1,39 @@
+name: Portable verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: mulegraph
+          POSTGRES_PASSWORD: synthetic_ci_only
+          POSTGRES_DB: mulegraph
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U mulegraph -d mulegraph"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: uv sync --locked
+      - run: uv run --locked ruff check .
+      - run: uv run --locked ruff format --check .
+      - run: uv run --locked pytest
+        env:
+          MULEGRAPH_TEST_DATABASE_URL: postgresql://mulegraph:synthetic_ci_only@127.0.0.1:5432/mulegraph
+      - run: npm ci --prefix frontend
+      - run: npm test --prefix frontend
+      - run: npm run check --prefix frontend
+      - run: npm run build --prefix frontend

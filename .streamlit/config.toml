@@ -1,0 +1,16 @@
+[theme]
+base = "dark"
+primaryColor = "#7C9CFF"
+backgroundColor = "#090F20"
+secondaryBackgroundColor = "#121C32"
+textColor = "#E7ECF8"
+font = "sans serif"
+baseRadius = "12px"
+buttonRadius = "8px"
+showSidebarBorder = true
+paddingTop = "2rem"
+borderColor = "#24314A"
+[server]
+address = "127.0.0.1"
+[browser]
+gatherUsageStats = false

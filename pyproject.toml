@@ -1,0 +1,48 @@
+[project]
+name = "mulegraph"
+version = "0.1.0"
+description = "Foundations for financial crime detection and investigation"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "duckdb>=1.2,<2",
+    "fastapi>=0.115,<1",
+    "lightgbm>=4.6,<5",
+    "matplotlib>=3.9,<4",
+    "networkx>=3.4,<4",
+    "plotly>=6,<7",
+    "psycopg[binary]>=3.2,<4",
+    "pyarrow>=19,<24",
+    "scikit-learn>=1.6,<2",
+    "streamlit>=1.45,<2",
+    "uvicorn>=0.30,<1",
+]
+
+[project.scripts]
+mulegraph-db-check = "mulegraph.db:main"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2,<3",
+    "pytest>=8,<10",
+    "ruff>=0.11,<1",
+]
+
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mulegraph"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = ["integration: requires a running PostgreSQL database"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

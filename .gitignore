@@ -1,0 +1,60 @@
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.venv/
+.tools/
+.uv-cache/
+.uv-python/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Credentials, datasets, and generated artifacts
+.env
+.env.*
+!.env.example
+data/
+artifacts/
+*.log
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Frontend dependencies and browser test output
+node_modules/
+playwright-report/
+test-results/
+
+# Local workspace configuration and private notes
+AGENTS.md
+CLAUDE.md
+.agents/
+.claude/
+.codex/
+prompts/
+chat-logs/
+*.chatlog
+.github/copilot-instructions.md
+.cursor/
+.cursorrules
+docs/final_project_audit.md
+docs/portfolio_summary.md
+docs/release_hygiene.md
+
+# Optional local service secrets and exported model/data bundles
+.streamlit/secrets.toml
+*.pem
+*.key
+*.pkl
+*.pickle
+*.joblib
+*.parquet
+*.onnx
+*.db
+*.sqlite*

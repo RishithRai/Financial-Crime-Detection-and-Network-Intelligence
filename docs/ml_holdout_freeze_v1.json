@@ -1,0 +1,138 @@
+{
+  "comparison": "supervised-v1/history_lr_1.0",
+  "constant_score": 0.0,
+  "dataset": {
+    "dataset_id": 1,
+    "dataset_key": "ibm-aml-hi-small-v8",
+    "fingerprint": "676d1c42a92e495ca159fc0cadf28acd0e33598b728fdc236b6e089dd8f28240"
+  },
+  "dependencies": {
+    "duckdb": "1.5.6",
+    "joblib": "1.6.0",
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.4",
+    "pyarrow": "23.0.1",
+    "scikit-learn": "1.9.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "description": "Development holdouts: previous EDA/rules inspection and reused validation.",
+  "descriptive_groups": [
+    "payment_format",
+    "day"
+  ],
+  "feature_manifest_sha256": "dfcd0ead8e947ba3803bcd7aaedcc1685f78a9d5103381b8a731bdca8245d2d5",
+  "feature_sha256": "dffd3df6fe3b938281f6f28fccf6584736698af6f6206426754425d1bb2f8d89",
+  "frozen_at": "2026-10-14T18:35:45.223509+00:00",
+  "implementation": {
+    "eda.py": "2e4456ea22fc5ce05aeb4659b32144dd25fcdb01d45009d3ebffd5cf1e436000",
+    "feature_state.py": "9f26f8c4649f7a6c9b3785508e762c8359392822254058785955e59e5744ce92",
+    "features.py": "b35280ea1965653177fa7e9a1fb88e5222ee11c4496de7b7d02e19abe1c6f317",
+    "ml.py": "0f5e19c03857c9f7339f5205cfa97f42d907909299054d418a489b722c492ba2",
+    "ml_holdout.py": "06cb93a009f7686387e57513ee4ce500054f669b2dd6957f298f23a2873a78cb",
+    "ml_inference.py": "ce1d87ed3af85105f53d0510db81323a48a5f35ec5e4aff973966104f576cda2",
+    "ml_stabilization.py": "b4db05c4035d5ccfb44e5edbc54531442cea98f64f9f43f0f72df24911e742c0",
+    "ml_training.py": "14ac0c07287ad22bdaf2f20746bb708d0e2b6f848681afa4ec2b41a48ea96b10",
+    "rule_metrics.py": "c0dbcb6b3a794e1a83e294fb2dc67834e5a400abc87e19365801c862bc0bb642",
+    "rules.py": "d52dddadc4ac69367bf83e44d16b10c273e6657e88c853ac1a55adcd1b0f0b7d",
+    "rules_baseline.py": "ac49f734d0af926dabfc47207237858abda20c39a4fb2707908704df6b535491"
+  },
+  "policy": "No fitting, selection or threshold changes. Grouped AP; tied-rank AUC; descending score then frozen identity-hash tie order; K capped at population; budget=floor(N/100). Constant score AP equals split prevalence; no pooling.",
+  "selected": "lightgbm-stable-v1/history_none",
+  "sources_sha256": {
+    "original": {
+      "current_lightgbm_15/metadata.json": "d37bd11f4ade6d936103036f80f93d160a840d72e739b15dc3d9ebd798b44922",
+      "current_lightgbm_15/model.joblib": "da8a629f11c85bdf1c8cf22fb47210d73f326d53fe5873749527825a00bea789",
+      "current_lightgbm_15/validation.parquet": "30a74de28d918cb6f9394727998009c9c07d3ee29ab0e953c1e136ed6e52d363",
+      "current_lr_1.0/metadata.json": "68b3e5244850223b3f98292cc57fd41b2472492cfc803a7b4e4fdc0ce084634d",
+      "current_lr_1.0/model.joblib": "37bbc71d609983adaa8a5f0c07b231f3120886f4e4127f588daf1671e6635788",
+      "current_lr_1.0/validation.parquet": "0e4abf49831005e8f573b5348b1496e3365c6650f2ca49d7d98c0570d5c3708c",
+      "current_no_format_lightgbm_15/metadata.json": "df2d24e63a6420e76f920a2cd5458e04f4e9f9c7e72d6f56b60c85f22d6ded35",
+      "current_no_format_lightgbm_15/model.joblib": "e55389d6266e4aae6ae7e5aac9dfd738deaf4e8cff433edb456d81a2977417f7",
+      "current_no_format_lightgbm_15/validation.parquet": "1072182807e98b1032a5ea1233cca4305ce1b924848870f914eeb209c875e9e6",
+      "current_no_format_lr_1.0/metadata.json": "cedcb1812eb3256ec6bdcc2a8e377a1ac45ad96969c638bc1da81f74dae92bbc",
+      "current_no_format_lr_1.0/model.joblib": "6f2ea10d495e7e1fc1834a742b4e5c4240dc23aeb0ebbdb7f2ea9409162c2090",
+      "current_no_format_lr_1.0/validation.parquet": "49967fe1c729d5bc9f7fe84d693f27ed6846f292c238977934a017edf6746403",
+      "final_diagnostics.json": "43f024ecb164911dca16059c19b722bc959c5ba99c0f913881fa580b0bf10294",
+      "final_diagnostics_script.py": "c9480c8dcd9358f258e883b78e6a784e28c072421dacd6748b7856bafc2adcfe",
+      "history_lightgbm_15/metadata.json": "6118c3856ac8aa5a9c47f5d61f5d0808a9f9d54b9e1a01968503bb64fc795b1f",
+      "history_lightgbm_15/model.joblib": "31bd4e7e579329808086d704e2b39240400f500b8f0cc8812aea5b31981b494f",
+      "history_lightgbm_15/validation.parquet": "94655993ae50d181a3d45bb908a0494ceb67daef38f61cd538c92aeee2d4fd31",
+      "history_lightgbm_31/metadata.json": "58a8084e3acc267a7f29f31c1fe1b3a0948d92071b3d591b91acaebeee0baf93",
+      "history_lightgbm_31/model.joblib": "3dd589edf1d101e11682a0a608c54150097f405bbaa47fb8c8525cc8d9694366",
+      "history_lightgbm_31/validation.parquet": "4b8d921ec8b2e3875bae0c179d4be47f6fa1a5d2d7b2a17c20ae60cc9718b353",
+      "history_lr_0.1/metadata.json": "2bc1e261dc3939f5dbb5fcb06430b7e06b3082e11488179668706e450297b4d9",
+      "history_lr_0.1/model.joblib": "146afc70184ee1dbbb7f2cd6a38d92659ef2581d686e29d2447e5832c0331718",
+      "history_lr_0.1/validation.parquet": "62022665814ef8a9e881db549010c3c572c3b438f00e13f4c0395f14c7119336",
+      "history_lr_1.0/metadata.json": "39e2b0d14da8bff43a7a95e1533f3331006e92e574b2afec9fafe1b838691f09",
+      "history_lr_1.0/model.joblib": "aa8f2718f46b38d2944bc70fa708aa8cc5093b59e670ad2bbd191b35bb52762b",
+      "history_lr_1.0/validation.parquet": "8961397928a14754df427e6a3d593c29e02bc1ed008325c6cae651a6fd605327",
+      "history_no_format_lightgbm_15/metadata.json": "1432b3455c898e61545d3a9c575e01ef8b8723373fe59e77ec2b609b696dd29a",
+      "history_no_format_lightgbm_15/model.joblib": "5f1a0c9bc3db05e679ca8c46efe92faa30753f525dc56b0f94ec5535444fc558",
+      "history_no_format_lightgbm_15/validation.parquet": "2f125f2939c2162bc921ef16d1c398ccf5acbc3354a177ab0fe42787ef3d9896",
+      "history_no_format_lr_1.0/metadata.json": "593fa2bf6a2668cdc26c7c0b538d34c0356a65b18d4d7205c5a50669a80e5fa4",
+      "history_no_format_lr_1.0/model.joblib": "2b9b80c076cc77be0b0a7c117e1f6d1409ce00ebf52b801a92ae4e037f78e126",
+      "history_no_format_lr_1.0/validation.parquet": "92f29bc797823c72dc29a4fde575ee6bd95fb7b6998985cb081ec865030f81e3",
+      "plan.json": "8428caee94932a2d660bce2e1811ae19585e5e6c5a65eb4b723e40670355a1f4",
+      "results.json": "e69814ecec4e022b9506a8c7f05b9c05dfc609348a95c4c2285fb7fa5a6492f2",
+      "score_diagnostics.json": "8a16c037cd27a7a5ba3125344bca7c055c75c2b866685e3549beff260f15756b",
+      "verification.json": "2c79a59209565c13ddb69650cb902045d85ff8606e924cca17b9e420e1f3d779",
+      "verification_before_final.json": "ed53a283cbc9430b6c59670aa191fd969a9bee201a718b2d5642e08ea5dcc318",
+      "verification_before_resume.json": "a7ab1b668a1ddfa12d35fa5aea81548ec69d6486f2629b105653b9bb6bb74258"
+    },
+    "rules": {
+      "calibration.json": "7f2966596476bd828c43eaa63604f8985583bfad05c0183ec77c29806249b551",
+      "holdout/evaluation.json": "a98ee512e3ff86c289637df6dff8d53d8d7fef7d1bec8d659f27c8f87045b778",
+      "holdout/stress_predictions.parquet": "1279eff9cad12da3aebf96755dcb526c6c3d6dc87246dc30a0ccaa4be88fa6fc",
+      "holdout/test_predictions.parquet": "5d920d0ecc23e7af7e531b945ee4090cae9a7c3b33f76db81e3e3b4178a110c1",
+      "rules.json": "fce28168d66d3a47bea0b2d63a681d4e97b4b333c02f75b34becef5f724f8b28",
+      "validation_predictions.parquet": "f58fcd0858145a91694c91e0b69688438c3d72be9a1864cab9c7f67a3eadd691",
+      "verification.json": "a9472d80200c95e14717abc33ebf8b86124cd0ce779f26dd0751d49f11e3345d"
+    },
+    "stable": {
+      "history_full/metadata.json": "e2e61883da6a68b0d9f361a9e46230d526534ae86362b5771a656e5012942a8b",
+      "history_full/model.joblib": "28eeb2830f543b4b6b9675c5064273c4005b3297285d2e6be79a1ed86eaa0b3c",
+      "history_full/validation.parquet": "1db548216f8ae08bbbf48a7c9f7261b9c6cca549ecdcf0f37e5798fc18d1d3d4",
+      "history_no_format_full/metadata.json": "1f18fc8d7c1bc82f4706c343e300e5d0b5fddc6157fd5641e532c115de3509fc",
+      "history_no_format_full/model.joblib": "0562b3a8e3d9daac6a902f01a81d6e62abcc12376c7ed37bc772a3353cf2b70d",
+      "history_no_format_full/validation.parquet": "ac446ca4a79bec55741c76fc1cf42141a4110f4998a6366d9f6422501c00a99c",
+      "history_no_format_none/metadata.json": "e2cde40b33a098a73222956bc5cdbf312c4e6427cfc58b8ab5f42049258e8284",
+      "history_no_format_none/model.joblib": "4b198ad71858f87c70ec15fcfba7ea8c3c113853ec525dcbeaa9ab0459f87247",
+      "history_no_format_none/validation.parquet": "26155557f341f86f1c70ddd7239df3c98353fe37bdff1a1f3b34e9f24f5dff48",
+      "history_no_format_sqrt/metadata.json": "237833d5fa63e561ca06d6c950dcfae45b5bfa068868263d39b47e8453a1dd1b",
+      "history_no_format_sqrt/model.joblib": "fbc95512889031c17d479a0cdd463a7df5404c65a974a665b734075b2b6272f1",
+      "history_no_format_sqrt/validation.parquet": "292c0c3319bf8d0a04c05c7e450b8f3f717ea5cfa0a62ea24e6457c01553bc45",
+      "history_none/metadata.json": "17f4eed96618886c92e0b7a3e5f37d2648215c04330675d1b256ace90dae88e6",
+      "history_none/model.joblib": "5d02b0704e164acdd7961eb459bf3cee2270eefd02becd8b4ba5a56dc3689605",
+      "history_none/validation.parquet": "ed9b75b6f820c3ab705eb630a12b412cb33283b55145a6d8d892e6adf30728f1",
+      "history_sqrt/metadata.json": "431fe7e2a6f44db6bbe5a8adc52043a29c90c5178883a902ff8c036a96a0e0a4",
+      "history_sqrt/model.joblib": "0b141d1146775d0f3a02a32abb569b2a17be10138af0889284a89fb4b89ada7d",
+      "history_sqrt/validation.parquet": "1f86e111d8fe314c33affa5715fa0d81dfc9dbfc947b00e04d0374adeb531a36",
+      "plan.json": "29b4476986270fd1d9166179dcb72ee495dcf4378304d081d8465665c7687950",
+      "results.json": "555d760eb6091d3515e904825523bfea18bfeb67b7c81061ad80d1575d4c982f",
+      "verification.json": "a784639d9e15abf7832636366583af8dfe0445c5aa087cc3cf3a13396d23cc35"
+    }
+  },
+  "splits": {
+    "stress": [
+      "2022-09-11T00:00:00",
+      "2022-09-19T00:00:00"
+    ],
+    "test": [
+      "2022-09-09T00:00:00",
+      "2022-09-11T00:00:00"
+    ]
+  },
+  "thresholds": {
+    "ach": 1,
+    "lightgbm": 0.011489041059356882,
+    "logistic": 0.9535042643547059,
+    "prevalence": 1,
+    "rules": 2
+  },
+  "uv_lock_sha256": "bbbfafc3618c37ddb16fe145bd9604ef5ee8271dee64c25beb65c6d9579d96a0",
+  "validation_replay_rows": {
+    "lightgbm": 965524,
+    "logistic": 965524
+  },
+  "version": "supervised-holdout-v1"
+}

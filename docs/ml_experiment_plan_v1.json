@@ -1,0 +1,75 @@
+{
+  "created_at": "2026-10-14T05:50:02.470479+00:00",
+  "dataset": {
+    "dataset_id": 1,
+    "dataset_key": "ibm-aml-hi-small-v8",
+    "fingerprint": "676d1c42a92e495ca159fc0cadf28acd0e33598b728fdc236b6e089dd8f28240"
+  },
+  "dependencies": {
+    "duckdb": "1.5.6",
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.4",
+    "pyarrow": "23.0.1",
+    "sklearn": "1.9.1"
+  },
+  "experiments": [
+    {
+      "family": "lr",
+      "setting": 1.0,
+      "variant": "current"
+    },
+    {
+      "family": "lightgbm",
+      "setting": 15,
+      "variant": "current"
+    },
+    {
+      "family": "lr",
+      "setting": 1.0,
+      "variant": "current_no_format"
+    },
+    {
+      "family": "lightgbm",
+      "setting": 15,
+      "variant": "current_no_format"
+    },
+    {
+      "family": "lr",
+      "setting": 1.0,
+      "variant": "history"
+    },
+    {
+      "family": "lightgbm",
+      "setting": 15,
+      "variant": "history"
+    },
+    {
+      "family": "lr",
+      "setting": 1.0,
+      "variant": "history_no_format"
+    },
+    {
+      "family": "lightgbm",
+      "setting": 15,
+      "variant": "history_no_format"
+    },
+    {
+      "family": "lr",
+      "setting": 0.1,
+      "variant": "history"
+    },
+    {
+      "family": "lightgbm",
+      "setting": 31,
+      "variant": "history"
+    }
+  ],
+  "feature_sha256": "dffd3df6fe3b938281f6f28fccf6584736698af6f6206426754425d1bb2f8d89",
+  "implementation_sha256": "14ac0c07287ad22bdaf2f20746bb708d0e2b6f848681afa4ec2b41a48ea96b10",
+  "inputs_sha256": "0f5e19c03857c9f7339f5205cfa97f42d907909299054d418a489b722c492ba2",
+  "seed": 42,
+  "selection": "highest validation AP; ties prefer earlier run",
+  "threads": 2,
+  "threshold": "whole score tiers within 1% validation cap",
+  "version": "supervised-v1"
+}

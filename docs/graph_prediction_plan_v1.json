@@ -1,0 +1,20 @@
+{
+  "version": "graph-prediction-v1",
+  "declared_on": "2026-10-15",
+  "features": {
+    "pair_prior_count": "Count of strictly earlier directed sender-to-receiver source transactions, across currencies; duplicates count separately.",
+    "reverse_prior_count": "Count of strictly earlier receiver-to-sender source transactions; zero for self-transfers.",
+    "pair_seconds_since_last": "Seconds since last strictly earlier sender-to-receiver event; null if none.",
+    "reverse_seconds_since_last": "Seconds since last strictly earlier reverse event; null if none, including self-transfers."
+  },
+  "reciprocity": "For distinct endpoints, positive counts in both directions establish prior reciprocal activity. Do not add a redundant Boolean predictor; counts and directional recencies represent it. Report reciprocal coverage descriptively.",
+  "identities": "Dataset-scoped normalized bank plus unchanged account string. Self-transfers retain their own directed count/recency but never create reverse activity. No monetary matching or currency conversion; counts summarize topology across currencies.",
+  "temporal": "Group all events for an unordered composite pair and timestamp before accumulating. Windows are all observed history strictly before T. Preserve September 1-6 train, 7-8 validation, 9-10 test and 11-18 stress. Generate all rows but train/evaluate only train/validation.",
+  "pipeline": "Read only explicit core identity/time fields from checksum-verified historical-v1, using bounded-memory DuckDB external grouping/windowing. Separate atomic graph-features-v1 artifact. No labels, patterns, NetworkX snapshots or changes to historical-v1.",
+  "experiments": ["history_control", "history_plus_graph"],
+  "configuration": "Exact lightgbm-stable-v1/history_none PARAMETERS from ml_stabilization.py; positive weight 1; seed 42; 240 trees; two CPU threads; no early stopping, search or extra seeds.",
+  "preprocessing": "Fit existing history preprocessing on training only and require exact match with original. For four graph numerics fit log1p means/scales on train only, impute absent recency with zero and append two missingness flags. Control uses original 84 columns, augmented appends six encoded columns.",
+  "comparison": "AP primary; ROC-AUC, Precision/Recall at floor(1% * validation rows), frozen-baseline comparison, fit/predict/preprocessing costs, saturation and reload checks. A directionally promising exploratory result requires stable augmented AP strictly above control and 1% recall not below control. No significance claim. Never replace original selected model in this milestone.",
+  "gates": "Before real training persist implementation/dependency/input/original hashes. Exactly two fits; durable attempt record; refuse output overwrite. Require control predictions exactly equal frozen history_none validation predictions; halt on mismatch. Do not adjust features/configuration after validation observations.",
+  "scope": "Validation reused: exploratory results only. No new test/stress predictions or label access. Preserve originals and investigation services. No probability calibration claims."
+}
